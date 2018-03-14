@@ -1,0 +1,16 @@
+{
+  "name": "form-app1",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-validation": "^3.0.7",
+    "validator": "^9.4.1"
+  }
+}
