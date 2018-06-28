@@ -28,10 +28,17 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-             mail to: 'nikitajenkins@yopmail.com',
+            script{ 
+                emailext(
+                    subject: 'LOL',
+                    body: 'This is done',
+                    recipientProviders: ['nikitajenkins@yopmail.com'],
+                )
+            }
+             mail( to: 'nikitajenkins@yopmail.com',
              subject:  "Yay!!",
              body: "Deployment Successful Pipeline: ${currentBuild.fullDisplayName} ${env.BUILD_URL}"
-    
+    )
         }
         failure {
             echo 'This will run only if failed'
