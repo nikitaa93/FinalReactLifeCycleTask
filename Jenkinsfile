@@ -1,6 +1,7 @@
 pipeline {
     agent any
     environment {
+        JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Dmail.smtp.starttls.enable=true"
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
     }
@@ -14,6 +15,7 @@ pipeline {
             steps {
                 sh 'echo $DISABLE_AUTH'
                 sh 'echo $DB_ENGINE'
+                sh 'echo $JENKINS_JAVA_OPTIONS'
             }
         }
         stage('build') {
